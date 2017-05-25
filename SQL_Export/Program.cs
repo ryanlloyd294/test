@@ -113,13 +113,13 @@ namespace SQL_Export
 
             foreach (var table in Table_list)
             {
-                
+                Console.WriteLine(table);
                 foreach (var LP in LP_list)
                 {
                     QueryString = @"SELECT * FROM [CMA_Consistency].[Comp].[" + table + "] WHERE LP_LP = '" + LP + "'";
                     filepath = filepath_root + LP + @"\";
                     System.IO.Directory.CreateDirectory(filepath);
-                    Console.WriteLine(filepath);
+                    Console.WriteLine(LP);
                     Filename = table+"_"+LP+".csv";
                     SQLtoCSV.SQLToCSV(connectionString, QueryString, filepath, Filename);
                 }
