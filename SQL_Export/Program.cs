@@ -111,8 +111,6 @@ namespace SQL_Export
                 reader.Close();
             }
 
-            
-
             foreach (var table in Table_list)
             {
                 
